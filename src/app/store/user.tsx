@@ -12,7 +12,6 @@ export const userStore = create((set) => ({
 // import { userStore } from "@/app/store/user"
 
 // const Home = () => {
-
 //     const user = userStore((state: any) => state.user)
 
 //     return (

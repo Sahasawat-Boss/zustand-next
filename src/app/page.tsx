@@ -1,21 +1,16 @@
-"use client"
+'use client';
 
-import { userStore } from "@/app/store/user"
+import usePostStore from "./store/post";
 
-const Home = () => {
-
-  const user = userStore((state: any) => state.user)
+export default function Dashboard() {
+  const post = usePostStore((state) => state.post);
+  console.log(post); // ✅ Debug
 
   return (
-    <main>
-      Home
-      <div>
-        {user.full_name}
-        <br />
-        {user.short_name}
-      </div>
-    </main>
-  )
-}
+    <div style={{ border: '1px solid black', padding: '1rem' }}>
+      <p>Title: {post.title || 'No title found'}</p>
+      <p>Content: {post.content || 'No content found'}</p>
+    </div>
 
-export default Home
+  );
+}
